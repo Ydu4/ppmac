@@ -9,16 +9,6 @@
 # PORT: asyn port name to the PMAC (for instance PMAC_S0)
 # AXIS: PMAC axis number to request the status word for
 
-record(stringout, "$(SYS)$(DEV)Cmd:Echo-Cmd")
-{
-    field(DESC, "echo = 7")
-    field(DTYP, "asynOctetWrite")
-    field(OUT,  "@asyn($(PORT) 0)")
-    field(VAL,  "echo 7")
-    field(PINI, "YES")
-    field(SCAN, "passive")
-    info(autosaveFields, "SCAN")
-}
 
 record(ai, "$(SYS)$(DEV)PhaseCur-I") {
   field(DESC, "actual motor current readback")
